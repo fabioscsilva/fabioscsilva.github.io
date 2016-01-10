@@ -7,8 +7,14 @@
 
 .center-container,
 .footer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -25,17 +31,47 @@
     text-align: center;
 }
 
-.content .photo {
+.photo {
+    transition: all 0.3s ease-in-out;
     height: 300px;
     width: 300px;
 }
 
-.content .name {
+.photo:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.opacity.photo {
+    opacity: 0.5;
+}
+
+.opacity.photo:hover {
+    opacity: 1;
+}
+
+.greyscale.photo {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+}
+
+.greyscale.photo:hover {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+}
+
+.name {
     font-weight: bold;
     margin: 15px 0 5px;
 }
 
-.content .job {
+.job {
     color: #000;
     font-weight: normal;
     margin: 5px 0;
@@ -80,7 +116,7 @@ a {
 
 @media only screen
 and (max-device-width : 736px) {
-    .content .photo {
+    .photo {
         height: 175px;
         width: 175px;
     }
